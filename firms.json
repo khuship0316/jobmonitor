@@ -1,0 +1,28 @@
+[
+  {"name": "McKinsey", "hint_domain": "mckinsey.com", "role_hints": ["Business Analyst Intern"]},
+  {"name": "BCG", "hint_domain": "bcg.com", "role_hints": ["Summer Associate"]},
+  {"name": "Bain", "hint_domain": "bain.com", "role_hints": ["Associate Consultant Intern"]},
+
+  {"name": "Deloitte", "hint_domain": "deloitte.com", "role_hints": ["Business Technology Solutions Summer Scholar", "Strategy Summer Scholar"]},
+  {"name": "Accenture", "hint_domain": "accenture.com", "role_hints": ["Consulting Development Program"]},
+  {"name": "Strategy&", "hint_domain": "strategyand.pwc.com", "role_hints": ["Summer Associate"]},
+  {"name": "EY-Parthenon", "hint_domain": "ey.com", "role_hints": ["Summer Associate"]},
+  {"name": "KPMG", "hint_domain": "kpmguscareers.com", "role_hints": ["Embark Scholar", "Advisory Intern"]},
+  {"name": "PwC", "hint_domain": "pwc.com", "role_hints": ["Consulting Intern"]},
+  {"name": "Oliver Wyman", "hint_domain": "oliverwyman.com", "role_hints": ["Summer Intern"]},
+  {"name": "Kearney", "hint_domain": "kearney.com", "role_hints": ["Summer Business Analyst"]},
+  {"name": "L.E.K.", "hint_domain": "lek.com", "role_hints": ["Summer Consultant"]},
+  {"name": "Alvarez & Marsal", "hint_domain": "alvarezandmarsal.com", "role_hints": ["Summer Analyst"]},
+  {"name": "FTI Consulting", "hint_domain": "fticonsulting.com", "role_hints": ["Summer Intern"]},
+  {"name": "AlixPartners", "hint_domain": "alixpartners.com", "role_hints": ["Summer Associate"]},
+  {"name": "Simon-Kucher", "hint_domain": "simon-kucher.com", "role_hints": ["Summer Intern"]},
+  {"name": "OC&C", "hint_domain": "occstrategy.com", "role_hints": ["Summer Associate"]},
+  {"name": "ZS", "hint_domain": "zs.com", "role_hints": ["Business Consulting Associate Intern"]},
+
+  {"name": "Analysis Group", "hint_domain": "analysisgroup.com", "role_hints": ["Summer Analyst"]},
+  {"name": "Cornerstone Research", "hint_domain": "cornerstone.com", "role_hints": ["Summer Analyst"]},
+  {"name": "Charles River Associates", "hint_domain": "crai.com", "role_hints": ["Summer Analyst"]},
+  {"name": "NERA Economic Consulting", "hint_domain": "nera.com", "role_hints": ["Summer Analyst"]},
+  {"name": "Bates White", "hint_domain": "bateswhite.com", "role_hints": ["Summer Consultant"]},
+  {"name": "Berkeley Research Group", "hint_domain": "thinkbrg.com", "role_hints": ["Summer Associate"]}
+]
