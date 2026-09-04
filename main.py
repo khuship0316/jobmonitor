@@ -30,12 +30,12 @@ def save_json(path, data):
 def main():
     firms = load_json(FIRMS_PATH, [])
 
-state_exists = os.path.exists(STATE_PATH)
-state = load_json(STATE_PATH, {})
+    # Check whether state.json exists before loading it
+    state_exists = os.path.exists(STATE_PATH)
+    state = load_json(STATE_PATH, {})
 
-# Treat a missing OR empty state file as the first run
-first_run = not state_exists or not state
-    
+    # Missing OR empty state means this is the baseline run
+    first_run = not state_exists or not state
 
     new_postings = []
     unknowns = []
@@ -44,6 +44,7 @@ first_run = not state_exists or not state
     for firm in firms:
         name = firm["name"]
         seen = set(state.get(name, []))
+
         try:
             result = check_firm_status(firm)
         except Exception as e:
