@@ -1,0 +1,44 @@
+name: Job Monitor
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 9am ET
+    - cron: "0 17 * * *"   # 1pm ET
+    - cron: "0 21 * * *"   # 5pm ET
+    - cron: "0 1  * * *"   # 9pm ET
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run monitor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          SMS_GATEWAY_TO: ${{ secrets.SMS_GATEWAY_TO }}
+        run: python main.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "job-monitor-bot"
+          git config user.email "actions@github.com"
+          git add state.json
+          git diff --quiet --cached || git commit -m "Update monitor state [skip ci]"
+          git push
