@@ -1,1 +1,20 @@
-{}
+{
+  "BCG": [
+    "692e071633232a1649ede2c82d0cd2368d24b76d7380ce52282703f9a19bc820"
+  ],
+  "Deloitte": [
+    "dd430072f5b2984ba85aff90c7caa05f09df0c8e15de59dbd6ab0922a253a340"
+  ],
+  "PwC": [
+    "bccd0ae5030c20548a109601c1fc04f88b06b383a9e74e474a54a761b17f4764"
+  ],
+  "L.E.K.": [
+    "00c3f367b280e293fc600b2e413113a6880b90bd98f715f937284e43d41afcf9"
+  ],
+  "OC&C": [
+    "d89f7f7dfdb9e6930562116d0c7f2e8311c858c32f8eb18bdd0d0223c556f720"
+  ],
+  "NERA Economic Consulting": [
+    "fead6b1efb6706e295c6c813dec3b061965d3b1fc68d9111f4550b15b0f97b89"
+  ]
+}
