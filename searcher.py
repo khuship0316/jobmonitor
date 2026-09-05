@@ -12,7 +12,7 @@ import json
 import os
 import requests
 
-ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+ ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
 MODEL = "claude-sonnet-5"  # search + judgment task benefits from the stronger model
 API_URL = "https://api.anthropic.com/v1/messages"
 
