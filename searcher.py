@@ -83,7 +83,7 @@ def check_firm_status(firm: dict) -> dict:
         },
         json={
             "model": MODEL,
-            "max_tokens": 2000,
+            "max_tokens": 4096,
             "system": SYSTEM_PROMPT,
             "messages": [{"role": "user", "content": user_content}],
             "tools": [{"type": "web_search_20250305", "name": "web_search"}],
@@ -101,6 +101,15 @@ def check_firm_status(firm: dict) -> dict:
         return {"status": "unknown", "title": "", "url": "", "evidence": "No text response from model."}
 
     raw = text_blocks[-1].strip().replace("```json", "").replace("```", "").strip()
+
+    # The model sometimes prefaces the JSON with a sentence of commentary.
+    # Since our JSON schema has no nested objects, it's safe to just grab
+    # everything between the first '{' and the last '}'.
+    first_brace = raw.find("{")
+    last_brace = raw.rfind("}")
+    if first_brace != -1 and last_brace != -1 and last_brace > first_brace:
+        raw = raw[first_brace:last_brace + 1]
+
     try:
         result = json.loads(raw)
     except json.JSONDecodeError:
